@@ -71,6 +71,10 @@ add_executable(multimodalcbf
   src/slros_busmsg_conversion.cpp
   src/slros_initialize.cpp
 )
+
+add_executable(topic_monitor_node
+  src/topic_monitor_node.cpp
+)
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 #target_compile_options(multimodalcbf PUBLIC  $<$<OR:$<COMPILE_LANGUAGE:CXX>,$<COMPILE_LANGUAGE:C>>: -Wall -Wextra -Wpedantic >)
 endif()
@@ -113,7 +117,27 @@ target_link_libraries(
     ${Boost_LIBRARIES}
     ${CMAKE_DL_LIBS}
 )
+
+add_dependencies(
+  topic_monitor_node
+  ${catkin_EXPORTED_TARGETS}
+)
+
+target_include_directories(topic_monitor_node PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+
+target_link_libraries(
+  topic_monitor_node
+    ${catkin_LIBRARIES}
+    ${Boost_LIBRARIES}
+)
+
 install(TARGETS multimodalcbf
+  EXPORT export_${PROJECT_NAME}
+  DESTINATION lib/${PROJECT_NAME})
+
+install(TARGETS topic_monitor_node
   EXPORT export_${PROJECT_NAME}
   DESTINATION lib/${PROJECT_NAME})
 foreach(file_i ${CUDA_BINS})
