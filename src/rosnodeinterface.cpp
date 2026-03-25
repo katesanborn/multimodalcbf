@@ -3,9 +3,9 @@
 //
 // Code generated for Simulink model 'multimodalcbf'.
 //
-// Model version                  : 1.33
+// Model version                  : 1.35
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Tue Mar 24 11:54:30 2026
+// C/C++ source code generated on : Wed Mar 25 15:44:28 2026
 //
 
 #ifdef _MSC_VER

@@ -28,5 +28,5 @@
   #define MULTIMODALCBF_PUBLIC_TYPE
 #endif
 #endif  // MULTIMODALCBF__VISIBILITY_CONTROL_H_
-// Generated 24-Mar-2026 11:54:34
+// Generated 25-Mar-2026 15:44:32
 // Copyright 2019-2020 The MathWorks, Inc.

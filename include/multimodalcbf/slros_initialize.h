@@ -26,6 +26,9 @@ extern SimulinkPublisher<std_msgs::Float64, SL_Bus_multimodalcbf_std_msgs_Float6
 // For Block multimodalcbf/Publish2
 extern SimulinkPublisher<std_msgs::Float64, SL_Bus_multimodalcbf_std_msgs_Float64> Pub_multimodalcbf_93;
 
+// For Block multimodalcbf/Publish3
+extern SimulinkPublisher<std_msgs::Float64, SL_Bus_multimodalcbf_std_msgs_Float64> Pub_multimodalcbf_96;
+
 void slros_node_init(int argc, char** argv);
 
 #endif

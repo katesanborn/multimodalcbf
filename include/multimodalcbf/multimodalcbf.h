@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'multimodalcbf'.
 //
-// Model version                  : 1.33
+// Model version                  : 1.35
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Tue Mar 24 11:54:18 2026
+// C/C++ source code generated on : Wed Mar 25 15:44:13 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -33,23 +33,26 @@ extern "C"
 
 // Block signals (default storage)
 struct B_multimodalcbf_T {
-  SL_Bus_multimodalcbf_std_msgs_Float64 In1;// '<S13>/In1'
-  SL_Bus_multimodalcbf_std_msgs_Float64 In1_e;// '<S12>/In1'
-  SL_Bus_multimodalcbf_std_msgs_Float64 In1_b;// '<S11>/In1'
-  SL_Bus_multimodalcbf_std_msgs_Float64 In1_bg;// '<S10>/In1'
+  char_T b_zeroDelimTopic[29];
+  char_T b_zeroDelimTopic_m[28];
+  SL_Bus_multimodalcbf_std_msgs_Float64 In1;// '<S15>/In1'
+  SL_Bus_multimodalcbf_std_msgs_Float64 In1_e;// '<S14>/In1'
+  SL_Bus_multimodalcbf_std_msgs_Float64 In1_b;// '<S13>/In1'
+  SL_Bus_multimodalcbf_std_msgs_Float64 In1_bg;// '<S12>/In1'
 };
 
 // Block states (default storage) for system '<Root>'
 struct DW_multimodalcbf_T {
-  ros_slroscpp_internal_block_P_T obj; // '<S4>/SinkBlock'
-  ros_slroscpp_internal_block_P_T obj_a;// '<S3>/SinkBlock'
-  ros_slroscpp_internal_block_S_T obj_n;// '<S8>/SourceBlock'
-  ros_slroscpp_internal_block_S_T obj_m;// '<S7>/SourceBlock'
-  ros_slroscpp_internal_block_S_T obj_p;// '<S6>/SourceBlock'
-  ros_slroscpp_internal_block_S_T obj_e;// '<S5>/SourceBlock'
-  uint32_T durationCounter_1;          // '<S9>/Multimodal CBF'
-  uint8_T is_active_c20_multimodalcbf; // '<S9>/Multimodal CBF'
-  uint8_T is_c20_multimodalcbf;        // '<S9>/Multimodal CBF'
+  ros_slroscpp_internal_block_P_T obj; // '<S6>/SinkBlock'
+  ros_slroscpp_internal_block_P_T obj_d;// '<S5>/SinkBlock'
+  ros_slroscpp_internal_block_P_T obj_a;// '<S4>/SinkBlock'
+  ros_slroscpp_internal_block_S_T obj_n;// '<S10>/SourceBlock'
+  ros_slroscpp_internal_block_S_T obj_m;// '<S9>/SourceBlock'
+  ros_slroscpp_internal_block_S_T obj_p;// '<S8>/SourceBlock'
+  ros_slroscpp_internal_block_S_T obj_e;// '<S7>/SourceBlock'
+  uint32_T durationCounter_1;          // '<S11>/Multimodal CBF'
+  uint8_T is_active_c20_multimodalcbf; // '<S11>/Multimodal CBF'
+  uint8_T is_c20_multimodalcbf;        // '<S11>/Multimodal CBF'
 };
 
 // Real-time Model Data Structure
@@ -118,7 +121,7 @@ extern volatile boolean_T runModel;
 //-
 //  These blocks were eliminated from the model due to optimizations:
 //
-//  Block '<S9>/Scope' : Unused code path elimination
+//  Block '<S11>/Scope' : Unused code path elimination
 
 
 //-
@@ -138,25 +141,27 @@ extern volatile boolean_T runModel;
 //  '<Root>' : 'multimodalcbf'
 //  '<S1>'   : 'multimodalcbf/Blank Message1'
 //  '<S2>'   : 'multimodalcbf/Blank Message2'
-//  '<S3>'   : 'multimodalcbf/Publish1'
-//  '<S4>'   : 'multimodalcbf/Publish2'
-//  '<S5>'   : 'multimodalcbf/Subscribe'
-//  '<S6>'   : 'multimodalcbf/Subscribe1'
-//  '<S7>'   : 'multimodalcbf/Subscribe4'
-//  '<S8>'   : 'multimodalcbf/Subscribe6'
-//  '<S9>'   : 'multimodalcbf/Subsystem Reference'
-//  '<S10>'  : 'multimodalcbf/Subscribe/Enabled Subsystem'
-//  '<S11>'  : 'multimodalcbf/Subscribe1/Enabled Subsystem'
-//  '<S12>'  : 'multimodalcbf/Subscribe4/Enabled Subsystem'
-//  '<S13>'  : 'multimodalcbf/Subscribe6/Enabled Subsystem'
-//  '<S14>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF'
-//  '<S15>'  : 'multimodalcbf/Subsystem Reference/base_algorithm'
-//  '<S16>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/nominal'
-//  '<S17>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/stop_and_go'
-//  '<S18>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition'
-//  '<S19>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition/MATLAB Function'
-//  '<S20>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter'
-//  '<S21>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter/MATLAB Function1'
+//  '<S3>'   : 'multimodalcbf/Blank Message3'
+//  '<S4>'   : 'multimodalcbf/Publish1'
+//  '<S5>'   : 'multimodalcbf/Publish2'
+//  '<S6>'   : 'multimodalcbf/Publish3'
+//  '<S7>'   : 'multimodalcbf/Subscribe'
+//  '<S8>'   : 'multimodalcbf/Subscribe1'
+//  '<S9>'   : 'multimodalcbf/Subscribe4'
+//  '<S10>'  : 'multimodalcbf/Subscribe6'
+//  '<S11>'  : 'multimodalcbf/Subsystem Reference'
+//  '<S12>'  : 'multimodalcbf/Subscribe/Enabled Subsystem'
+//  '<S13>'  : 'multimodalcbf/Subscribe1/Enabled Subsystem'
+//  '<S14>'  : 'multimodalcbf/Subscribe4/Enabled Subsystem'
+//  '<S15>'  : 'multimodalcbf/Subscribe6/Enabled Subsystem'
+//  '<S16>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF'
+//  '<S17>'  : 'multimodalcbf/Subsystem Reference/base_algorithm'
+//  '<S18>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/nominal'
+//  '<S19>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/stop_and_go'
+//  '<S20>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition'
+//  '<S21>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition/MATLAB Function'
+//  '<S22>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter'
+//  '<S23>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter/MATLAB Function1'
 
 #endif                                 // multimodalcbf_h_
 
