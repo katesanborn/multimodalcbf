@@ -17,7 +17,7 @@
         <!-- DO NOT change this remap; this gives an additional safety buffer -->
         <remap from="lead_dist" to="lead_dist_extra"/>
         <!-- DO NOT change this remap; this fixes the sign change for rel_vel -->
-        <remap from="rel_vel" to="rel_vel_reversed"/>
+        <!-- <remap from="rel_vel" to="rel_vel_reversed"/> -->
     </node>
 
 
@@ -67,7 +67,7 @@
         <!-- DO NOT change this remap; this gives an additional safety buffer -->
         <remap from="lead_dist" to="lead_dist_extra"/>
         <!-- DO NOT change this remap; this fixes the sign change for rel_vel -->
-        <remap from="rel_vel" to="rel_vel_reversed"/>
+        <!-- <remap from="rel_vel" to="rel_vel_reversed"/> -->
     </node>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- ~~~~~~ Magic commands that make the car connect to the correct interface ~~~~~~ -->
