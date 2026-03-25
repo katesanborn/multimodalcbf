@@ -12,9 +12,6 @@
     <node pkg="cruisecontrol" type="cruisecontrol" name="cruisecontrol" output="screen">
         <!-- if you have parameters for your node, set them here  -->
 
-        <!-- Desired crusie control speed in m/s -->
-        <param name="desired_velocity" type="double" value="17.0"/>
-
         <!-- DO NOT change this remap; this is a hardware-only configuration -->
         <remap from="cmd_accel" to="cmd_accel_pre"/>
         <!-- DO NOT change this remap; this gives an additional safety buffer -->
@@ -22,6 +19,8 @@
         <!-- DO NOT change this remap; this fixes the sign change for rel_vel -->
         <remap from="rel_vel" to="rel_vel_reversed"/>
     </node>
+
+    <node pkg="setpointreader" type="setpointreader" name="setpointreader" output="screen"/>
 
 
 
@@ -46,7 +45,6 @@
 
     <!-- ~~~~~ Guess what? Our car uses the wrong sign for rel_vel...so we fix it for you ~~ -->
     <!-- We use the same offset rate as before -->
-    <arg name="offset_rate" default="10.0"/>
     <node pkg="rostopic" type="rostopic" name="rostopic_sign" 
         args="pub zero_float -r $(arg offset_rate) std_msgs/Float64 'data: 0.0'"/>
     
