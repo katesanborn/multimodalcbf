@@ -20,9 +20,6 @@
         <remap from="rel_vel" to="rel_vel_reversed"/>
     </node>
 
-    <node pkg="setpointreader" type="setpointreader" name="setpointreader" output="screen"/>
-
-
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- ~~~~          Teams may not update below this line         ~~~~~~~~~~~~~~~~~~~~ -->
