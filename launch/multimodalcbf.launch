@@ -6,10 +6,14 @@
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <!-- your description likely should not change, but if it needs to , check it here -->
-    <arg name="description" default="profacc_test"/>
+    <arg name="description" default="multimodalcbf_test"/>
     <!-- Your package name should not change, but you may want to add params inside -->
-    <node pkg="profacc" type="profacc" name="profacc" output="screen">
+    
+    <node pkg="cruisecontrol" type="cruisecontrol" name="cruisecontrol" output="screen">
         <!-- if you have parameters for your node, set them here  -->
+
+        <!-- Desired crusie control speed in m/s -->
+        <param name="desired_velocity" type="double" value="17.0"/>
 
         <!-- DO NOT change this remap; this is a hardware-only configuration -->
         <remap from="cmd_accel" to="cmd_accel_pre"/>
@@ -64,7 +68,11 @@
     <arg name="readonly" default="false"/>
     <arg name="vsl_hwil_test" default="false"/>
     <!-- CBF node -->
-    <node pkg="cbf" type="cbf" name="cbf" if="$(eval not readonly and hwil)">
+    <node pkg="multimodalcbf" type="multimodalcbf" name="multimodalcbf" if="$(eval not readonly and hwil)">
+        <!-- DO NOT change this remap; this gives an additional safety buffer -->
+        <remap from="lead_dist" to="lead_dist_extra"/>
+        <!-- DO NOT change this remap; this fixes the sign change for rel_vel -->
+        <remap from="rel_vel" to="rel_vel_reversed"/>
     </node>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- ~~~~~~ Magic commands that make the car connect to the correct interface ~~~~~~ -->
