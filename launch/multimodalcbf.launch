@@ -29,7 +29,7 @@
 	           in order to avoid using the CBF the whole time ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- We want an offset of (say) 10m for lead_dist -->
     <arg name="offset_rate" default="10.0"/>
-    <arg name="offset_value" default="10.0"/>
+    <arg name="offset_value" default="5.0"/>
     <node pkg="rostopic" type="rostopic" name="rostopic_offset" 
         args="pub lead_dist_offset -r $(arg offset_rate) std_msgs/Float64 'data: $(arg offset_value)'"/>
     
