@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.35
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Wed Mar 25 15:44:13 2026
+// C/C++ source code generated on : Tue Apr 21 10:54:29 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -154,14 +154,15 @@ extern volatile boolean_T runModel;
 //  '<S13>'  : 'multimodalcbf/Subscribe1/Enabled Subsystem'
 //  '<S14>'  : 'multimodalcbf/Subscribe4/Enabled Subsystem'
 //  '<S15>'  : 'multimodalcbf/Subscribe6/Enabled Subsystem'
-//  '<S16>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF'
-//  '<S17>'  : 'multimodalcbf/Subsystem Reference/base_algorithm'
-//  '<S18>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/nominal'
-//  '<S19>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/stop_and_go'
-//  '<S20>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition'
-//  '<S21>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition/MATLAB Function'
-//  '<S22>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter'
-//  '<S23>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter/MATLAB Function1'
+//  '<S16>'  : 'multimodalcbf/Subsystem Reference/MATLAB Function'
+//  '<S17>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF'
+//  '<S18>'  : 'multimodalcbf/Subsystem Reference/base_algorithm'
+//  '<S19>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/nominal'
+//  '<S20>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/stop_and_go'
+//  '<S21>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition'
+//  '<S22>'  : 'multimodalcbf/Subsystem Reference/Multimodal CBF/transition/MATLAB Function'
+//  '<S23>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter'
+//  '<S24>'  : 'multimodalcbf/Subsystem Reference/base_algorithm/cbf_filter/MATLAB Function1'
 
 #endif                                 // multimodalcbf_h_
 

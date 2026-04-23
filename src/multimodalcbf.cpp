@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.35
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Wed Mar 25 15:44:13 2026
+// C/C++ source code generated on : Tue Apr 21 10:54:29 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -53,6 +53,7 @@ void multimodalcbf_step(void)
   SL_Bus_multimodalcbf_std_msgs_Float64 rtb_SourceBlock_o2_p_0;
   real_T d_min;
   real_T e_term;
+  real_T timegap_accel;
   boolean_T b_varargout_1;
 
   // Outputs for Atomic SubSystem: '<Root>/Subscribe'
@@ -97,22 +98,22 @@ void multimodalcbf_step(void)
     multimodalcbf_DW.durationCounter_1 = 0U;
     multimodalcbf_DW.is_c20_multimodalcbf = multimodalcbf_IN_nominal;
 
-    // Merge: '<S16>/ Merge ' incorporates:
-    //   Constant: '<S18>/d_min_nominal'
-    //   SignalConversion generated from: '<S18>/d_min'
+    // Merge: '<S17>/ Merge ' incorporates:
+    //   Constant: '<S19>/d_min_nominal'
+    //   SignalConversion generated from: '<S19>/d_min'
 
     d_min = 15.0;
 
     // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-    //   Constant: '<S18>/Constant'
-    //   Merge: '<S16>/ Merge 1'
-    //   SignalConversion generated from: '<S18>/mode'
+    //   Constant: '<S19>/Constant'
+    //   Merge: '<S17>/ Merge 1'
+    //   SignalConversion generated from: '<S19>/mode'
 
     rtb_BusAssignment2.Data = 1.0;
 
-    // Merge: '<S16>/ Merge 2' incorporates:
-    //   Constant: '<S18>/Constant1'
-    //   SignalConversion generated from: '<S18>/max_accel'
+    // Merge: '<S17>/ Merge 2' incorporates:
+    //   Constant: '<S19>/Constant1'
+    //   SignalConversion generated from: '<S19>/max_accel'
 
     e_term = 1.5;
   } else {
@@ -126,41 +127,41 @@ void multimodalcbf_step(void)
             15.0) - 0.1) && (multimodalcbf_DW.durationCounter_1 >= 60U)) {
         multimodalcbf_DW.is_c20_multimodalcbf = multimodalcbf_IN_stop_and_go;
 
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   Constant: '<S19>/d_min_stop_and_go'
-        //   SignalConversion generated from: '<S19>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   Constant: '<S20>/d_min_stop_and_go'
+        //   SignalConversion generated from: '<S20>/d_min'
 
         d_min = 5.0;
 
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S19>/Constant'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S19>/mode'
+        //   Constant: '<S20>/Constant'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S20>/mode'
 
         rtb_BusAssignment2.Data = 2.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S19>/Constant1'
-        //   SignalConversion generated from: '<S19>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S20>/Constant1'
+        //   SignalConversion generated from: '<S20>/max_accel'
 
         e_term = 1.0;
       } else {
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   Constant: '<S18>/d_min_nominal'
-        //   SignalConversion generated from: '<S18>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   Constant: '<S19>/d_min_nominal'
+        //   SignalConversion generated from: '<S19>/d_min'
 
         d_min = 15.0;
 
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S18>/Constant'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S18>/mode'
+        //   Constant: '<S19>/Constant'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S19>/mode'
 
         rtb_BusAssignment2.Data = 1.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S18>/Constant1'
-        //   SignalConversion generated from: '<S18>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S19>/Constant1'
+        //   SignalConversion generated from: '<S19>/max_accel'
 
         e_term = 1.5;
       }
@@ -172,43 +173,43 @@ void multimodalcbf_step(void)
         multimodalcbf_DW.is_c20_multimodalcbf = multimodalcbf_IN_transition;
 
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S20>/Constant1'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S20>/mode'
+        //   Constant: '<S21>/Constant1'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S21>/mode'
 
         rtb_BusAssignment2.Data = 3.0;
 
-        // MATLAB Function: '<S20>/MATLAB Function'
+        // MATLAB Function: '<S21>/MATLAB Function'
         e_term = exp((multimodalcbf_B.In1_b.Data - 6.25) * 3.0);
 
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   MATLAB Function: '<S20>/MATLAB Function'
-        //   SignalConversion generated from: '<S20>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   MATLAB Function: '<S21>/MATLAB Function'
+        //   SignalConversion generated from: '<S21>/d_min'
 
         d_min = e_term / (e_term + 1.0) * 10.0 + 5.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S20>/Constant'
-        //   SignalConversion generated from: '<S20>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S21>/Constant'
+        //   SignalConversion generated from: '<S21>/max_accel'
 
         e_term = 0.5;
       } else {
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   Constant: '<S19>/d_min_stop_and_go'
-        //   SignalConversion generated from: '<S19>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   Constant: '<S20>/d_min_stop_and_go'
+        //   SignalConversion generated from: '<S20>/d_min'
 
         d_min = 5.0;
 
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S19>/Constant'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S19>/mode'
+        //   Constant: '<S20>/Constant'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S20>/mode'
 
         rtb_BusAssignment2.Data = 2.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S19>/Constant1'
-        //   SignalConversion generated from: '<S19>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S20>/Constant1'
+        //   SignalConversion generated from: '<S20>/max_accel'
 
         e_term = 1.0;
       }
@@ -219,22 +220,22 @@ void multimodalcbf_step(void)
       if (multimodalcbf_B.In1_b.Data <= 5.0) {
         multimodalcbf_DW.is_c20_multimodalcbf = multimodalcbf_IN_stop_and_go;
 
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   Constant: '<S19>/d_min_stop_and_go'
-        //   SignalConversion generated from: '<S19>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   Constant: '<S20>/d_min_stop_and_go'
+        //   SignalConversion generated from: '<S20>/d_min'
 
         d_min = 5.0;
 
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S19>/Constant'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S19>/mode'
+        //   Constant: '<S20>/Constant'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S20>/mode'
 
         rtb_BusAssignment2.Data = 2.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S19>/Constant1'
-        //   SignalConversion generated from: '<S19>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S20>/Constant1'
+        //   SignalConversion generated from: '<S20>/max_accel'
 
         e_term = 1.0;
       } else if ((multimodalcbf_B.In1_bg.Data >= (2.0 *
@@ -243,44 +244,44 @@ void multimodalcbf_step(void)
         multimodalcbf_DW.durationCounter_1 = 0U;
         multimodalcbf_DW.is_c20_multimodalcbf = multimodalcbf_IN_nominal;
 
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   Constant: '<S18>/d_min_nominal'
-        //   SignalConversion generated from: '<S18>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   Constant: '<S19>/d_min_nominal'
+        //   SignalConversion generated from: '<S19>/d_min'
 
         d_min = 15.0;
 
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S18>/Constant'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S18>/mode'
+        //   Constant: '<S19>/Constant'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S19>/mode'
 
         rtb_BusAssignment2.Data = 1.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S18>/Constant1'
-        //   SignalConversion generated from: '<S18>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S19>/Constant1'
+        //   SignalConversion generated from: '<S19>/max_accel'
 
         e_term = 1.5;
       } else {
         // BusAssignment: '<Root>/Bus Assignment2' incorporates:
-        //   Constant: '<S20>/Constant1'
-        //   Merge: '<S16>/ Merge 1'
-        //   SignalConversion generated from: '<S20>/mode'
+        //   Constant: '<S21>/Constant1'
+        //   Merge: '<S17>/ Merge 1'
+        //   SignalConversion generated from: '<S21>/mode'
 
         rtb_BusAssignment2.Data = 3.0;
 
-        // MATLAB Function: '<S20>/MATLAB Function'
+        // MATLAB Function: '<S21>/MATLAB Function'
         e_term = exp((multimodalcbf_B.In1_b.Data - 6.25) * 3.0);
 
-        // Merge: '<S16>/ Merge ' incorporates:
-        //   MATLAB Function: '<S20>/MATLAB Function'
-        //   SignalConversion generated from: '<S20>/d_min'
+        // Merge: '<S17>/ Merge ' incorporates:
+        //   MATLAB Function: '<S21>/MATLAB Function'
+        //   SignalConversion generated from: '<S21>/d_min'
 
         d_min = e_term / (e_term + 1.0) * 10.0 + 5.0;
 
-        // Merge: '<S16>/ Merge 2' incorporates:
-        //   Constant: '<S20>/Constant'
-        //   SignalConversion generated from: '<S20>/max_accel'
+        // Merge: '<S17>/ Merge 2' incorporates:
+        //   Constant: '<S21>/Constant'
+        //   SignalConversion generated from: '<S21>/max_accel'
 
         e_term = 0.5;
       }
@@ -313,16 +314,33 @@ void multimodalcbf_step(void)
   // End of Outputs for SubSystem: '<S9>/Enabled Subsystem'
   // End of Outputs for SubSystem: '<Root>/Subscribe4'
 
-  // MATLAB Function: '<S22>/MATLAB Function1' incorporates:
+  // MATLAB Function: '<S23>/MATLAB Function1' incorporates:
   //   Constant: '<S11>/k'
   //   Constant: '<S11>/t_min'
 
-  d_min = ((multimodalcbf_B.In1_bg.Data - 2.0 * multimodalcbf_B.In1_b.Data) -
-           d_min) * 0.05 + 0.5 * multimodalcbf_B.In1_e.Data;
+  timegap_accel = ((multimodalcbf_B.In1_bg.Data - 2.0 *
+                    multimodalcbf_B.In1_b.Data) - d_min) * 0.05 + 0.5 *
+    multimodalcbf_B.In1_e.Data;
 
-  // MinMax: '<S11>/Min'
-  if (d_min <= e_term) {
-    e_term = d_min;
+  // MATLAB Function: '<S11>/MATLAB Function' incorporates:
+  //   MATLAB Function: '<S23>/MATLAB Function1'
+
+  if ((multimodalcbf_B.In1_b.Data <= 0.0) && (timegap_accel <= 0.0)) {
+    d_min = timegap_accel - 1.0;
+  } else {
+    d_min = timegap_accel;
+  }
+
+  // MinMax: '<S11>/Min' incorporates:
+  //   MATLAB Function: '<S11>/MATLAB Function'
+  //   MATLAB Function: '<S23>/MATLAB Function1'
+
+  if (timegap_accel <= e_term) {
+    e_term = timegap_accel;
+  }
+
+  if ((e_term <= d_min) || rtIsNaN(d_min)) {
+    d_min = e_term;
   }
 
   // End of MinMax: '<S11>/Min'
@@ -345,22 +363,22 @@ void multimodalcbf_step(void)
   // End of Outputs for SubSystem: '<Root>/Subscribe6'
 
   // MinMax: '<Root>/MinMax'
-  if ((e_term <= multimodalcbf_B.In1.Data) || rtIsNaN(multimodalcbf_B.In1.Data))
+  if ((d_min <= multimodalcbf_B.In1.Data) || rtIsNaN(multimodalcbf_B.In1.Data))
   {
-    d_min = e_term;
+    e_term = d_min;
   } else {
-    d_min = multimodalcbf_B.In1.Data;
+    e_term = multimodalcbf_B.In1.Data;
   }
 
   // End of MinMax: '<Root>/MinMax'
 
   // Saturate: '<Root>/min//max 1.5//-3.0'
-  if (d_min < -3.0) {
+  if (e_term < -3.0) {
     // BusAssignment: '<Root>/Bus Assignment1'
     rtb_BusAssignment1.Data = -3.0;
   } else {
     // BusAssignment: '<Root>/Bus Assignment1'
-    rtb_BusAssignment1.Data = d_min;
+    rtb_BusAssignment1.Data = e_term;
   }
 
   // End of Saturate: '<Root>/min//max 1.5//-3.0'
@@ -372,7 +390,7 @@ void multimodalcbf_step(void)
   // End of Outputs for SubSystem: '<Root>/Publish1'
 
   // BusAssignment: '<Root>/Bus Assignment3'
-  rtb_BusAssignment3.Data = e_term;
+  rtb_BusAssignment3.Data = d_min;
 
   // Outputs for Atomic SubSystem: '<Root>/Publish3'
   // MATLABSystem: '<S6>/SinkBlock'
