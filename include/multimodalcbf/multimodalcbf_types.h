@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'multimodalcbf'.
 //
-// Model version                  : 1.35
+// Model version                  : 1.37
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Tue Apr 21 10:54:29 2026
+// C/C++ source code generated on : Fri Apr 24 09:39:11 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -29,6 +29,29 @@ struct SL_Bus_multimodalcbf_std_msgs_Float64
 };
 
 #endif
+
+#ifndef struct_e_robotics_slcore_internal_bl_T
+#define struct_e_robotics_slcore_internal_bl_T
+
+struct e_robotics_slcore_internal_bl_T
+{
+  int32_T __dummy;
+};
+
+#endif                                // struct_e_robotics_slcore_internal_bl_T
+
+#ifndef struct_ros_slros_internal_block_GetP_T
+#define struct_ros_slros_internal_block_GetP_T
+
+struct ros_slros_internal_block_GetP_T
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  e_robotics_slcore_internal_bl_T SampleTimeHandler;
+};
+
+#endif                                // struct_ros_slros_internal_block_GetP_T
 
 #ifndef struct_ros_slroscpp_internal_block_P_T
 #define struct_ros_slroscpp_internal_block_P_T

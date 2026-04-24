@@ -106,7 +106,9 @@
       <node pkg="cruisecontrol" type="cruisecontrol" name="cruisecontrol_node">
             <remap from="cmd_accel" to="cmd_accel_pre"/>
         </node>
-        <node pkg="multimodalcbf" type="multimodalcbf" name="multimodal_cbf_node"></node>
+        <node pkg="multimodalcbf" type="multimodalcbf" name="multimodal_cbf_node">
+			<param name="creep_velocity_limit" type="double" value="0.1" />
+		</node>
 	  
 	  <!-- add in the forward-facing radar here -->
 	  <node pkg="subtractor" type="subtractor" name="subtractor_relvel">
