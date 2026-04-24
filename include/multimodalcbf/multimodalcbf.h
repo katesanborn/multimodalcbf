@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'multimodalcbf'.
 //
-// Model version                  : 1.37
+// Model version                  : 1.42
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Fri Apr 24 09:39:11 2026
+// C/C++ source code generated on : Fri Apr 24 11:25:10 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -35,17 +35,20 @@ extern "C"
 struct B_multimodalcbf_T {
   char_T b_zeroDelimTopic[29];
   char_T b_zeroDelimTopic_m[28];
-  char_T b_zeroDelimName[21];
+  char_T b_zeroDelimName[25];
+  char_T b_zeroDelimName_c[21];
   SL_Bus_multimodalcbf_std_msgs_Float64 In1;// '<S15>/In1'
   SL_Bus_multimodalcbf_std_msgs_Float64 In1_e;// '<S14>/In1'
   SL_Bus_multimodalcbf_std_msgs_Float64 In1_b;// '<S13>/In1'
   SL_Bus_multimodalcbf_std_msgs_Float64 In1_bg;// '<S12>/In1'
+  SL_Bus_multimodalcbf_std_msgs_Float64 rtb_SourceBlock_o2_p_k;
 };
 
 // Block states (default storage) for system '<Root>'
 struct DW_multimodalcbf_T {
-  ros_slros_internal_block_GetP_T obj; // '<Root>/Get Parameter1'
-  ros_slroscpp_internal_block_P_T obj_j;// '<S6>/SinkBlock'
+  ros_slros_internal_block_GetP_T obj; // '<Root>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_j;// '<Root>/Get Parameter1'
+  ros_slroscpp_internal_block_P_T obj_jg;// '<S6>/SinkBlock'
   ros_slroscpp_internal_block_P_T obj_d;// '<S5>/SinkBlock'
   ros_slroscpp_internal_block_P_T obj_a;// '<S4>/SinkBlock'
   ros_slroscpp_internal_block_S_T obj_n;// '<S10>/SourceBlock'

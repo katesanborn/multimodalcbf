@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'multimodalcbf'.
 //
-// Model version                  : 1.37
+// Model version                  : 1.42
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Fri Apr 24 09:39:11 2026
+// C/C++ source code generated on : Fri Apr 24 11:25:10 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)

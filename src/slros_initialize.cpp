@@ -27,6 +27,9 @@ SimulinkPublisher<std_msgs::Float64, SL_Bus_multimodalcbf_std_msgs_Float64> Pub_
 // For Block multimodalcbf/Get Parameter1
 SimulinkParameterGetter<real64_T, double> ParamGet_multimodalcbf_97;
 
+// For Block multimodalcbf/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_multimodalcbf_98;
+
 void slros_node_init(int argc, char** argv)
 {
   ros::init(argc, argv, SLROSNodeName);

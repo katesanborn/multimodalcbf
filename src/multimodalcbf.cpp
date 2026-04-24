@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'multimodalcbf'.
 //
-// Model version                  : 1.37
+// Model version                  : 1.42
 // Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
-// C/C++ source code generated on : Fri Apr 24 09:39:11 2026
+// C/C++ source code generated on : Fri Apr 24 11:25:10 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -50,7 +50,7 @@ void multimodalcbf_step(void)
   SL_Bus_multimodalcbf_std_msgs_Float64 rtb_BusAssignment1;
   SL_Bus_multimodalcbf_std_msgs_Float64 rtb_BusAssignment2;
   SL_Bus_multimodalcbf_std_msgs_Float64 rtb_BusAssignment3;
-  SL_Bus_multimodalcbf_std_msgs_Float64 rtb_SourceBlock_o2_p_0;
+  real_T b_value;
   real_T d_min;
   real_T e_term;
   real_T rtb_Min;
@@ -58,7 +58,8 @@ void multimodalcbf_step(void)
 
   // Outputs for Atomic SubSystem: '<Root>/Subscribe'
   // MATLABSystem: '<S7>/SourceBlock'
-  b_varargout_1 = Sub_multimodalcbf_52.getLatestMessage(&rtb_SourceBlock_o2_p_0);
+  b_varargout_1 = Sub_multimodalcbf_52.getLatestMessage
+    (&multimodalcbf_B.rtb_SourceBlock_o2_p_k);
 
   // Outputs for Enabled SubSystem: '<S7>/Enabled Subsystem' incorporates:
   //   EnablePort: '<S12>/Enable'
@@ -66,7 +67,7 @@ void multimodalcbf_step(void)
   // Start for MATLABSystem: '<S7>/SourceBlock'
   if (b_varargout_1) {
     // SignalConversion generated from: '<S12>/In1'
-    multimodalcbf_B.In1_bg = rtb_SourceBlock_o2_p_0;
+    multimodalcbf_B.In1_bg = multimodalcbf_B.rtb_SourceBlock_o2_p_k;
   }
 
   // End of Start for MATLABSystem: '<S7>/SourceBlock'
@@ -75,7 +76,8 @@ void multimodalcbf_step(void)
 
   // Outputs for Atomic SubSystem: '<Root>/Subscribe1'
   // MATLABSystem: '<S8>/SourceBlock'
-  b_varargout_1 = Sub_multimodalcbf_53.getLatestMessage(&rtb_SourceBlock_o2_p_0);
+  b_varargout_1 = Sub_multimodalcbf_53.getLatestMessage
+    (&multimodalcbf_B.rtb_SourceBlock_o2_p_k);
 
   // Outputs for Enabled SubSystem: '<S8>/Enabled Subsystem' incorporates:
   //   EnablePort: '<S13>/Enable'
@@ -83,7 +85,7 @@ void multimodalcbf_step(void)
   // Start for MATLABSystem: '<S8>/SourceBlock'
   if (b_varargout_1) {
     // SignalConversion generated from: '<S13>/In1'
-    multimodalcbf_B.In1_b = rtb_SourceBlock_o2_p_0;
+    multimodalcbf_B.In1_b = multimodalcbf_B.rtb_SourceBlock_o2_p_k;
   }
 
   // End of Start for MATLABSystem: '<S8>/SourceBlock'
@@ -299,7 +301,8 @@ void multimodalcbf_step(void)
 
   // Outputs for Atomic SubSystem: '<Root>/Subscribe4'
   // MATLABSystem: '<S9>/SourceBlock'
-  b_varargout_1 = Sub_multimodalcbf_54.getLatestMessage(&rtb_SourceBlock_o2_p_0);
+  b_varargout_1 = Sub_multimodalcbf_54.getLatestMessage
+    (&multimodalcbf_B.rtb_SourceBlock_o2_p_k);
 
   // Outputs for Enabled SubSystem: '<S9>/Enabled Subsystem' incorporates:
   //   EnablePort: '<S14>/Enable'
@@ -307,7 +310,7 @@ void multimodalcbf_step(void)
   // Start for MATLABSystem: '<S9>/SourceBlock'
   if (b_varargout_1) {
     // SignalConversion generated from: '<S14>/In1'
-    multimodalcbf_B.In1_e = rtb_SourceBlock_o2_p_0;
+    multimodalcbf_B.In1_e = multimodalcbf_B.rtb_SourceBlock_o2_p_k;
   }
 
   // End of Start for MATLABSystem: '<S9>/SourceBlock'
@@ -324,11 +327,15 @@ void multimodalcbf_step(void)
   // MATLABSystem: '<Root>/Get Parameter1'
   ParamGet_multimodalcbf_97.get_parameter(&rtb_Min);
 
+  // MATLABSystem: '<Root>/Get Parameter2'
+  ParamGet_multimodalcbf_98.get_parameter(&b_value);
+
   // MATLAB Function: '<S11>/MATLAB Function' incorporates:
   //   MATLAB Function: '<S23>/MATLAB Function1'
   //   MATLABSystem: '<Root>/Get Parameter1'
+  //   MATLABSystem: '<Root>/Get Parameter2'
   //
-  if ((multimodalcbf_B.In1_b.Data <= rtb_Min) && (d_min <= 0.0)) {
+  if ((multimodalcbf_B.In1_b.Data <= rtb_Min) && (d_min <= b_value)) {
     rtb_Min = d_min - 1.0;
   } else {
     rtb_Min = d_min;
@@ -350,7 +357,8 @@ void multimodalcbf_step(void)
 
   // Outputs for Atomic SubSystem: '<Root>/Subscribe6'
   // MATLABSystem: '<S10>/SourceBlock'
-  b_varargout_1 = Sub_multimodalcbf_55.getLatestMessage(&rtb_SourceBlock_o2_p_0);
+  b_varargout_1 = Sub_multimodalcbf_55.getLatestMessage
+    (&multimodalcbf_B.rtb_SourceBlock_o2_p_k);
 
   // Outputs for Enabled SubSystem: '<S10>/Enabled Subsystem' incorporates:
   //   EnablePort: '<S15>/Enable'
@@ -358,7 +366,7 @@ void multimodalcbf_step(void)
   // Start for MATLABSystem: '<S10>/SourceBlock'
   if (b_varargout_1) {
     // SignalConversion generated from: '<S15>/In1'
-    multimodalcbf_B.In1 = rtb_SourceBlock_o2_p_0;
+    multimodalcbf_B.In1 = multimodalcbf_B.rtb_SourceBlock_o2_p_k;
   }
 
   // End of Start for MATLABSystem: '<S10>/SourceBlock'
@@ -430,6 +438,7 @@ void multimodalcbf_initialize(void)
     static const char_T b_zeroDelimTopic_8[8] = "rel_vel";
     static const char_T b_zeroDelimTopic_9[14] = "cmd_accel_pre";
     static const char_T b_zeroDelimName[21] = "creep_velocity_limit";
+    static const char_T b_zeroDelimName_0[25] = "creep_acceleration_limit";
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Subscribe'
     // Start for MATLABSystem: '<S7>/SourceBlock'
@@ -461,15 +470,15 @@ void multimodalcbf_initialize(void)
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish3'
     // Start for MATLABSystem: '<S6>/SinkBlock'
-    multimodalcbf_DW.obj_j.matlabCodegenIsDeleted = false;
-    multimodalcbf_DW.obj_j.isInitialized = 1;
+    multimodalcbf_DW.obj_jg.matlabCodegenIsDeleted = false;
+    multimodalcbf_DW.obj_jg.isInitialized = 1;
     for (i = 0; i < 28; i++) {
       multimodalcbf_B.b_zeroDelimTopic_m[i] = b_zeroDelimTopic_5[i];
     }
 
     Pub_multimodalcbf_96.createPublisher(&multimodalcbf_B.b_zeroDelimTopic_m[0],
       1);
-    multimodalcbf_DW.obj_j.isSetupComplete = true;
+    multimodalcbf_DW.obj_jg.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S6>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish3'
@@ -531,18 +540,32 @@ void multimodalcbf_initialize(void)
     // End of SystemInitialize for SubSystem: '<Root>/Subscribe6'
 
     // Start for MATLABSystem: '<Root>/Get Parameter1'
-    multimodalcbf_DW.obj.matlabCodegenIsDeleted = false;
-    multimodalcbf_DW.obj.isInitialized = 1;
+    multimodalcbf_DW.obj_j.matlabCodegenIsDeleted = false;
+    multimodalcbf_DW.obj_j.isInitialized = 1;
     for (i = 0; i < 21; i++) {
-      multimodalcbf_B.b_zeroDelimName[i] = b_zeroDelimName[i];
+      multimodalcbf_B.b_zeroDelimName_c[i] = b_zeroDelimName[i];
     }
 
-    ParamGet_multimodalcbf_97.initialize(&multimodalcbf_B.b_zeroDelimName[0]);
+    ParamGet_multimodalcbf_97.initialize(&multimodalcbf_B.b_zeroDelimName_c[0]);
     ParamGet_multimodalcbf_97.initialize_error_codes(0, 1, 2, 3);
     ParamGet_multimodalcbf_97.set_initial_value(0.1);
-    multimodalcbf_DW.obj.isSetupComplete = true;
+    multimodalcbf_DW.obj_j.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<Root>/Get Parameter1'
+
+    // Start for MATLABSystem: '<Root>/Get Parameter2'
+    multimodalcbf_DW.obj.matlabCodegenIsDeleted = false;
+    multimodalcbf_DW.obj.isInitialized = 1;
+    for (i = 0; i < 25; i++) {
+      multimodalcbf_B.b_zeroDelimName[i] = b_zeroDelimName_0[i];
+    }
+
+    ParamGet_multimodalcbf_98.initialize(&multimodalcbf_B.b_zeroDelimName[0]);
+    ParamGet_multimodalcbf_98.initialize_error_codes(0, 1, 2, 3);
+    ParamGet_multimodalcbf_98.set_initial_value(0.0);
+    multimodalcbf_DW.obj.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<Root>/Get Parameter2'
   }
 }
 
@@ -577,11 +600,18 @@ void multimodalcbf_terminate(void)
   // End of Terminate for SubSystem: '<Root>/Subscribe4'
 
   // Terminate for MATLABSystem: '<Root>/Get Parameter1'
+  if (!multimodalcbf_DW.obj_j.matlabCodegenIsDeleted) {
+    multimodalcbf_DW.obj_j.matlabCodegenIsDeleted = true;
+  }
+
+  // End of Terminate for MATLABSystem: '<Root>/Get Parameter1'
+
+  // Terminate for MATLABSystem: '<Root>/Get Parameter2'
   if (!multimodalcbf_DW.obj.matlabCodegenIsDeleted) {
     multimodalcbf_DW.obj.matlabCodegenIsDeleted = true;
   }
 
-  // End of Terminate for MATLABSystem: '<Root>/Get Parameter1'
+  // End of Terminate for MATLABSystem: '<Root>/Get Parameter2'
 
   // Terminate for Atomic SubSystem: '<Root>/Subscribe6'
   // Terminate for MATLABSystem: '<S10>/SourceBlock'
@@ -603,8 +633,8 @@ void multimodalcbf_terminate(void)
 
   // Terminate for Atomic SubSystem: '<Root>/Publish3'
   // Terminate for MATLABSystem: '<S6>/SinkBlock'
-  if (!multimodalcbf_DW.obj_j.matlabCodegenIsDeleted) {
-    multimodalcbf_DW.obj_j.matlabCodegenIsDeleted = true;
+  if (!multimodalcbf_DW.obj_jg.matlabCodegenIsDeleted) {
+    multimodalcbf_DW.obj_jg.matlabCodegenIsDeleted = true;
   }
 
   // End of Terminate for MATLABSystem: '<S6>/SinkBlock'
