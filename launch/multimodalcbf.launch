@@ -69,7 +69,7 @@
         <!-- DO NOT change this remap; this fixes the sign change for rel_vel -->
         <!-- <remap from="rel_vel" to="rel_vel_reversed"/> -->
         <param name="creep_velocity_limit" type="double" value="0.1" />
-        <param name="creep_acceleration_limit" type="double" value="0.0" />
+        <param name="creep_acceleration_limit" type="double" value="0.05" />
     </node>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- ~~~~~~ Magic commands that make the car connect to the correct interface ~~~~~~ -->
